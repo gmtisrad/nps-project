@@ -16,6 +16,7 @@ function watchForm () {
 
 function getParks(states, maxResults) {
     const queryString = formatParameters(states, maxResults);
+    console.log(queryString);
     const url = endPoint + '?' + queryString;
     fetch (url)
     .then(response => {
@@ -47,7 +48,8 @@ function formatParameters(states, maxResults) {
     for (let i = 0; i < states.length; i++) {
         parameters.push(`stateCode=${encodeURIComponent(states[i])}`)
     }
-    parameters.push(`limit:${encodeURIComponent(maxResults)}`);
+    parameters.push(`limit=${encodeURIComponent(maxResults)}`);
+    parameters.push(`start=0`);
     return parameters.join('&');
 }
 
