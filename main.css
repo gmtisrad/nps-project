@@ -1,0 +1,13 @@
+body {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.results {
+    height: 70vh; 
+    overflow-y: auto;
+}
